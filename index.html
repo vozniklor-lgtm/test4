@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test: Zagrożenia w sieci i ochrona systemu</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .quiz-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #2980b9;
+            padding-bottom: 10px;
+            margin-top: 0;
+            font-size: 1.6em;
+        }
+        .instruction {
+            background-color: #eaf2f8;
+            padding: 12px;
+            border-left: 4px solid #2980b9;
+            margin-bottom: 20px;
+            font-size: 0.95em;
+            line-height: 1.4;
+        }
+        .question {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #fafafa;
+            border-left: 5px solid #bdc3c7;
+            border-radius: 4px;
+        }
+        .question-title {
+            font-weight: bold;
+            font-size: 1.05em;
+            margin-bottom: 10px;
+        }
+        .options {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .options li {
+            margin-bottom: 8px;
+        }
+        .options label {
+            display: block;
+            padding: 10px 15px;
+            background: #f0f3f4;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .options label:hover {
+            background: #e5e8e8;
+        }
+        .options input[type="radio"] {
+            margin-right: 10px;
+        }
+        button {
+            background-color: #2ecc71;
+            color: white;
+            border: none;
+            padding: 14px 30px;
+            font-size: 1.1em;
+            border-radius: 6px;
+            cursor: pointer;
+            display: block;
+            width: 100%;
+            margin-top: 25px;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+        button:hover {
+            background-color: #27ae60;
+        }
+        #result-box {
+            margin-top: 30px;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 1.3em;
+            font-weight: bold;
+            display: none;
+        }
+        .warning-box {
+            background-color: #e74c3c;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            font-weight: bold;
+            text-align: center;
+            font-size: 1em;
+        }
+        .correct-answer {
+            background-color: #d4edda !important;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+        }
+        .wrong-answer {
+            background-color: #f8d7da !important;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+        }
+    </style>
+</head>
+<body>
+
+<div class="quiz-container">
+    <h1>Test: Zagrożenia w sieci, malware i ochrona systemu</h1>
+    <div class="instruction">
+        <strong>Instrukcja dla ucznia:</strong> Przeczytaj uważnie pytania i zaznacz jedną poprawną odpowiedź. 
+        Każde pytanie jest warte 0,5 punktu. Maksymalny wynik to 5 punktów. 
+        Po kliknięciu przycisku na dole zobaczysz swój wynik.
+    </div>
+
+    <form id="quizForm">
+        <div class="question" id="q1_box">
+            <div class="question-title">1. Które zachowanie w mediach społecznościowych stanowi bezpośrednie zagrożenie dla bezpieczeństwa danych?</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q1" value="A"> A) Ustawienie profilu jako prywatny.</label></li>
+                <li><label><input type="radio" name="q1" value="B"> B) Publikowanie zdjęć biletów lotniczych lub dokumentów z widocznymi danymi osobowymi.</label></li>
+                <li><label><input type="radio" name="q1" value="C"> C) Niepodawanie swojego dokładnego adresu zamieszkania.</label></li>
+                <li><label><input type="radio" name="q1" value="D"> D) Ignorowanie zaproszeń od nieznajomych osób.</label></li>
+            </ul>
+        </div>
+
+        <div class="question" id="q2_box">
+            <div class="question-title">2. Phishing to metoda ataku, która polega na:</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q2" value="A"> A) Skanowaniu dysku w celu usunięcia złośliwego kodu.</label></li>
+                <li><label><input type="radio" name="q2" value="B"> B) Przejęciu kontroli nad procesorem w celu wydobywania kryptowalut.</label></li>
+                <li><label><input type="radio" name="q2" value="C"> C) Podszywaniu się pod zaufane instytucje (np. banki, kurierów) w celu wyłudzenia loginów i haseł.</label></li>
+                <li><label><input type="radio" name="q2" value="D"> D) Fizycznym uszkodzeniu dysku twardego.</label></li>
+            </ul>
+        </div>
+
+        <div class="question" id="q3_box">
+            <div class="question-title">3. Czym jest exploit?</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q3" value="A"> A) Programem służącym do legalnego szyfrowania danych.</label></li>
+                <li><label><input type="radio" name="q3" value="B"> B) Kodem lub programem, który wykorzystuje lukę (błąd) w oprogramowaniu do przeprowadzenia ataku.</label></li>
+                <li><label><input type="radio" name="q3" value="C"> C) Usługą automatycznie konfigurującą domowe Wi-Fi.</label></li>
+                <li><label><input type="radio" name="q3" value="D"> D) Specjalnym kablem sieciowym o podwyższonej odporności.</label></li>
+            </ul>
+        </div>
+
+        <div class="question" id="q4_box">
+            <div class="question-title">4. Jaki program potajemnie rejestruje i zapisuje wszystkie naciśnięcia klawiszy użytkownika?</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q4" value="A"> A) Ransomware</label></li>
+                <li><label><input type="radio" name="q4" value="B"> B) Keylogger</label></li>
+                <li><label><input type="radio" name="q4" value="C"> C) Trojan</label></li>
+                <li><label><input type="radio" name="q4" value="D"> D) Firewall</label></li>
+            </ul>
+        </div>
+
+        <div class="question" id="q5_box">
+            <div class="question-title">5. Złośliwe oprogramowanie o nazwie Spyware służy do:</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q5" value="A"> A) Szyfrowania plików w celu wyłudzenia okupu.</label></li>
+                <li><label><input type="radio" name="q5" value="B"> B) Pobierania legalnych aktualizacji systemu operacyjnego Windows.</label></li>
+                <li><label><input type="radio" name="q5" value="C"> C) Szpiegowania działań użytkownika i wykradania poufnych danych.</label></li>
+                <li><label><input type="radio" name="q5" value="D"> D) Przyspieszania pracy karty graficznej.</label></li>
+            </ul>
+        </div>
+
+        <div class="question" id="q6_box">
+            <div class="question-title">6. Zainfekowany komputer działający potajemnie w sieci Botnet pod kontrolą przestępców to:</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q6" value="A"> A) Host aktywny</label></li>
+                <li><label><input type="radio" name="q6" value="B"> B) Serwer lustrzany</label></li>
+                <li><label><input type="radio" name="q6" value="C"> C) Komputer zombie</label></li>
+                <li><label><input type="radio" name="q6" value="D"> D) Router lokalny</label></li>
+            </ul>
+        </div>
+
+        <div class="question" id="q7_box">
+            <div class="question-title">7. Ransomware to oprogramowanie, które:</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q7" value="A"> A) Udaje przydatny program i instaluje szkodliwe w tle.</label></li>
+                <li><label><input type="radio" name="q7" value="B"> B) Szyfruje pliki na komputerze użytkownika i żąda opłaty za ich odblokowanie.</label></li>
+                <li><label><input type="radio" name="q7" value="C"> C) Blokuje dostęp do portów USB.</label></li>
+                <li><label><input type="radio" name="q7" value="D"> D) Służy do automatycznego doboru haseł.</label></li>
+            </ul>
+        </div>
+
+        <div class="question" id="q8_box">
+            <div class="question-title">8. Czym charakteryzuje się trojan (koń trojański)?</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q8" value="A"> A) Rozprzestrzenia się wyłącznie za pomocą wiadomości SMS.</label></li>
+                <li><label><input type="radio" name="q8" value="B"> B) Podszywa się pod przydatny program, ukrywając szkodliwe działanie w tle.</label></li>
+                <li><label><input type="radio" name="q8" value="C"> C) Automatycznie usuwa wszystkie inne wirusy z dysku.</label></li>
+                <li><label><input type="radio" name="q8" value="D"> D) Działa tylko wtedy, gdy komputer nie ma połączenia z siecią.</label></li>
+            </ul>
+        </div>
+
+        <div class="question" id="q9_box">
+            <div class="question-title">9. Jaka jest główna różnica między wirusem a robakiem sieciowym (Worm)?</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q9" value="A"> A) Wirus rozprzestrzenia się samoczynnie przez sieć, a robak potrzebuje programu-nosiciela.</label></li>
+                <li><label><input type="radio" name="q9" value="B"> B) Robak to samodzielny program rozprzestrzeniający się przez sieć, a wirus wymaga pliku-nosiciela do infekcji.</label></li>
+                <li><label><input type="radio" name="q9" value="C"> C) Robaki infekują wyłącznie system Linux, a wirusy system Windows.</label></li>
+                <li><label><input type="radio" name="q9" value="D"> D) Nie ma między nimi żadnej różnicy.</label></li>
+            </ul>
+        </div>
+
+        <div class="question" id="q10_box">
+            <div class="question-title">10. Dlaczego automatyczne aktualizacje (Windows Update) są kluczowe dla bezpieczeństwa?</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q10" value="A"> A) Ponieważ zwiększają kontrast monitora.</label></li>
+                <li><label><input type="radio" name="q10" value="B"> B) Ponieważ instalują łatki usuwające luki w oprogramowaniu i blokują exploity hakerów.</label></li>
+                <li><label><input type="radio" name="q10" value="C"> C) Ponieważ wyłączają zaporę sieciową w celu przyspieszenia pobierania danych.</label></li>
+                <li><label><input type="radio" name="q10" value="D"> D) Ponieważ automatycznie usuwają konta standardowe.</label></li>
+            </ul>
+        </div>
+
+        <button type="button" onclick="checkAnswers()">Zakończ test i sprawdź wynik</button>
+    </form>
+
+    <div id="result-box"></div>
+</div>
+
+<script>
+    const correctAnswers = {
+        q1: 'B', q2: 'C', q3: 'B', q4: 'B', q5: 'C',
+        q6: 'C', q7: 'B', q8: 'B', q9: 'B', q10: 'B'
+    };
+
+    let testSubmitted = false;
+
+    window.onbeforeunload = function() {
+        if (!testSubmitted) {
+            return "Czy na pewno chcesz opuścić stronę? Twój postęp zostanie utracony!";
+        }
+    };
+
+    function checkAnswers() {
+        if (testSubmitted) return;
+
+        let score = 0;
+        const form = document.getElementById('quizForm');
+
+        for (let key in correctAnswers) {
+            const selected = form.elements[key].value;
+            const qBox = document.getElementById(key + '_box');
+            const options = qBox.querySelectorAll('.options li label');
+
+            options.forEach(label => {
+                const input = label.querySelector('input');
+                if (input.value === correctAnswers[key]) {
+                    label.classList.add('correct-answer');
+                }
+                if (input.checked && input.value !== correctAnswers[key]) {
+                    label.classList.add('wrong-answer');
+                }
+            });
+
+            if (selected === correctAnswers[key]) {
+                score += 0.5;
+            }
+        }
+
+        testSubmitted = true;
+
+        const resultBox = document.getElementById('result-box');
+        resultBox.style.display = 'block';
+        resultBox.innerHTML = `
+            <div style="background-color: #2980b9; color: white; padding: 15px; border-radius: 8px;">
+                Twój wynik to: <span style="font-size: 1.5em; font-weight: bold;">${score} / 5.0</span> punktów.
+            </div>
+            <div class="warning-box">
+                ⚠️ UWAGA: Nie zamykaj tego okna, dopóki nauczyciel nie zapisze Twojego wyniku do dziennika!
+            </div>
+        `;
+
+        const inputs = document.querySelectorAll('input[type="radio"]');
+        inputs.forEach(input => input.disabled = true);
+        
+        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    }
+</script>
+
+</body>
+</html>
